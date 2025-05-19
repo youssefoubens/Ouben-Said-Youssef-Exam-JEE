@@ -5,6 +5,7 @@ import org.example.backend_exam.entities.Client;
 import org.example.backend_exam.mappers.ClientMapper;
 import org.example.backend_exam.repositories.ClientRepository;
 import org.example.backend_exam.services.ClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +18,7 @@ public class ClientServiceImpl implements ClientService {
     
     private final ClientRepository clientRepository;
     private final ClientMapper clientMapper;
-    
+    @Autowired
     public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper) {
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;

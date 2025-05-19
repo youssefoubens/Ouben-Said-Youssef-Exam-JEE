@@ -2,13 +2,16 @@ package org.example.backend_exam.mappers;
 
 import org.example.backend_exam.dtos.*;
 import org.example.backend_exam.entities.*;
+import org.hibernate.annotations.Comments;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
+@Component
 @Mapper(componentModel = "spring", uses = {RepaymentMapper.class})
 public interface CreditMapper {
-    CreditMapper INSTANCE = Mappers.getMapper(CreditMapper.class);
+
 
     @Mapping(target = "clientId", source = "client.id")
     @Mapping(target = "clientName", source = "client.name")

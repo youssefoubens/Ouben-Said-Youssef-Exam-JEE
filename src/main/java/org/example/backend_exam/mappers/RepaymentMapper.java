@@ -5,10 +5,12 @@ import org.example.backend_exam.entities.Repayment;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
+@Component
 @Mapper(componentModel = "spring")
 public interface RepaymentMapper {
-    RepaymentMapper INSTANCE = Mappers.getMapper(RepaymentMapper.class);
+
     
     @Mapping(target = "creditId", source = "credit.id")
     RepaymentDTO toDto(Repayment repayment);
